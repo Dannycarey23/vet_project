@@ -4,7 +4,7 @@ DROP TABLE vets;
 CREATE TABLE vets (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    pet_id INT REFERENCES pets(id)
+    pet_id INT REFERENCES pets(id) ON DELETE CASCADE
 );
 
 CREATE TABLE pets (
