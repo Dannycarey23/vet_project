@@ -17,3 +17,11 @@ def vets_view_all():
 
 def vet_add():
     return None
+
+
+
+def vet_delete():
+    return None
+
+def vet_update():
+    return None
