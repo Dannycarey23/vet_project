@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<div class="vetProfile">
+    <div class="vetPic">
+        <img src="">
+    </div>
+    <div class="vetInfo">
+        <ul>
+            <li>Name: <a href="/vets/{{vet.id}}">{{vet.name}}</a></li>
+            <li>Employee Number: <a href="/vets/{{vet.id}}">{{vet.id}}</a></li>
+            <li>Patient List: <a href="/vets/{{vet.id}}"> Click Here </a></li>
+        </ul>
+    </div>
+    <div>
+        <form class="deleteButton" action="/deletevet" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="newVetForm">
+    <form action="/newvet" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="vetName" name="name" placeholder="Full name here" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
