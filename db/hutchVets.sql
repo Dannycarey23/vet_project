@@ -1,11 +1,5 @@
-DROP TABLE pets;
 DROP TABLE vets;
-
-CREATE TABLE vets (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    pet_id INT REFERENCES pets(id) ON DELETE CASCADE
-);
+DROP TABLE pets;
 
 CREATE TABLE pets (
     id SERIAL PRIMARY KEY,
@@ -16,4 +10,10 @@ CREATE TABLE pets (
     owners_name VARCHAR(255),
     owners_phone INT,
     treatment_notes VARCHAR(255)
+);
+
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    pet_id INT REFERENCES pets(id) ON DELETE CASCADE
 );

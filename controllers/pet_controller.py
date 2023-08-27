@@ -10,3 +10,8 @@ pets_blueprint = Blueprint("pets", __name__)
 def index():
     pets = pet_repository.pets_view_all()
     return render_template("pets/index.html", pets=pets, title="All pets currently registered at the surgery")
+
+
+
+
+
