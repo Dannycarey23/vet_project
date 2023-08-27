@@ -13,20 +13,20 @@ def vets_view_all():
         vets.append(vet)
     return vets
 
-#vets_view_all() requests all of the information on the vets table on the database and returns it into the "vets" list.
+#requests all of the information on the vets table on the database and returns it into the "vets" list.
 
-def vet_add(vet):
-    sql = "INSERT INTO vets (name) VALUES (%s) RETURNING *"
-    values = [vet.name]
-    results = run_sql(sql, values)
-    id = results[0]['id']
-    vet.id = id
-    return vet
+# def vet_add(vet):
+#     sql = "INSERT INTO vets (name) VALUES (%s) RETURNING *"
+#     values = [vet.name]
+#     results = run_sql(sql, values)
+#     id = results[0]['id']
+#     vet.id = id
+#     return vet
 
-def vet_delete(id):
-    sql = "DELETE FROM vets WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
+# def vet_delete(id):
+#     sql = "DELETE FROM vets WHERE id = %s"
+#     values = [id]
+#     run_sql(sql, values)
 
-def vet_update():
-    return None
+# def vet_update():
+#     return None

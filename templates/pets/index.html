@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> HERE IS THE PETS PAGE</h1>
+
+<div class="petProfile">
+    <div class="petPic">
+        <img src="">
+    </div>
+    <div class="petInfo">
+        <ul>
+            <li>Name: <a href="/pets/{{pets.id}}">{{pets.name}}</a></li>
+            <li>DOB: <a href="/pets/{{pets.id}}">{{pets.dob}}</a></li>
+            <li>Type: <a href="/pets/{{pets.id}}">{{pets.type}}</a></li>
+            <li>Gender: <a href="/pets/{{pets.id}}">{{pets.gender}}</a></li>
+            <li>Owners Name: <a href="/pets/{{pets.id}}">{{pets.owners_name}}</a></li>
+            <li>Owners Phone: <a href="/pets/{{pets.id}}">{{pets.owners_phone}}</a></li>
+            <li>Treatment Notes: <a href="/pets/{{pets.id}}">{{pets.treatment_notes}}</a></li>
+            
+            
+        </ul>
+    </div>
+    <div>
+        <form class="deleteButton" action="/deletepet" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

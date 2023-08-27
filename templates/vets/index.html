@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1> HERE IS THE VETS PAGE</h1>
+
 <div class="vetProfile">
     <div class="vetPic">
         <img src="">
     </div>
     <div class="vetInfo">
         <ul>
-            <li>Name: <a href="/vets/{{vet.id}}">{{vet.name}}</a></li>
-            <li>Employee Number: <a href="/vets/{{vet.id}}">{{vet.id}}</a></li>
-            <li>Patient List: <a href="/vets/{{vet.id}}"> Click Here </a></li>
+            <li>Name: <a href="/vets/{{vets.id}}">{{vets.name}}</a></li>
+            <li>Employee Number: <a href="/vets/{{vets.id}}">{{vets.id}}</a></li>
+            <li>Patient List: <a href="/vets/{{vets.id}}"> Click Here </a></li>
         </ul>
     </div>
     <div>
@@ -27,4 +29,5 @@
         <button type="submit">Submit</button>
     </form>
 </div>
+
 {% endblock %}
