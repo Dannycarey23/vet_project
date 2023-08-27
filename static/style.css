@@ -46,3 +46,11 @@ nav li{
     text-align: left;
     font-size: medium;
 }
+
+.petInfo li{
+    list-style-type: none;
+}
+
+.addPetForm{
+    
+}

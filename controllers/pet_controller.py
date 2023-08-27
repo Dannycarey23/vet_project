@@ -12,6 +12,9 @@ def index():
     return render_template("pets/index.html", pets=pets, title="All pets currently registered at the surgery")
 
 
-
+@pets_blueprint.route("/pets/<id>/delete", methods=['POST'])
+def delete_a_pet(id):
+    pet_repository.pet_delete(id)
+    return redirect ('/pets')
 
 

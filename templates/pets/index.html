@@ -18,11 +18,39 @@
         </ul>
     </div>
     <div>
-        <form class="deleteButton" action="/deletepet" method="POST">
+        <form class="deleteButton" action="/pets/{{pet.id}}/delete" method="POST">
             <button type="submit">Delete</button>
         </form>
     </div>
 </div>
 {% endfor %}
+
+<div class="addPetForm">
+    <form action="/newpet" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" id="petName" name="name" placeholder="Enter the patient's name" required>
+        
+        <label for="dob">DOB: </label>
+        <input type="text" id="petDob" name="dob" placeholder="Enter the patient's DOB" required>
+        
+        <label for="type">Type: </label>
+        <input type="text" id="petType" name="type" placeholder="Enter what type of animal the patient is" required>
+        
+        <label for="gender">Gender: </label>
+        <input type="text" id="petGender" name="gender" placeholder="Enter the patient's gender" required>
+        
+        <label for="owners_name">Owner's Name: </label>
+        <input type="text" id="petOwnersName" name="owners_name" placeholder="Enter the patient's owner's name" required>
+        
+        <label for="owners_phone">Owner's Phone: </label>
+        <input type="text" id="petOwnersPhone" name="owners_phone" placeholder="Enter the patient's owner's phone number" required>
+        
+        <label for="treatment_notes">Treatment Notes: </label>
+        <input type="text" id="petTreatmentNotes" name="treatment_notes" placeholder="Enter any notes here" required>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
 
 {% endblock %}

@@ -19,3 +19,8 @@ def pets_view_all():
         pet = Pet(row['name'], row['dob'], row['type'], row['gender'], row['owners_name'], row['owners_phone'], row['treatment_notes'], row['id'])
         pets.append(pet)
     return pets
+
+def pet_delete(id):
+    sql = "DELETE FROM pets WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
