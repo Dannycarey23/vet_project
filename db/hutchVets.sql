@@ -8,7 +8,7 @@ CREATE TABLE pets (
     type VARCHAR(255),
     gender VARCHAR(255),
     owners_name VARCHAR(255),
-    owners_phone INT,
+    owners_phone VARCHAR(255),
     treatment_notes VARCHAR(255)
 );
 

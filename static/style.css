@@ -5,24 +5,44 @@ body{
 
 nav li{
     list-style-type: none;
+    display: inline;
 }
 
-/* 
+
 
 .vetProfile{
-
+    border: solid black thick;
+    width: 15%;
+    margin: 2.5%;
+    display: inline-block;
 }
 
 .vetPic{
-
+    border-radius: 25px;
+    object-fit: contain;
 }
 
 .vetInfo{
-
+    text-align: left;
+    font-size: medium;
 }
 
-.newVetForm{
+/* .newVetForm{
 
-} 
+}  */
 
-*/
+.petProfile{
+    border: solid thick black;
+    width: 15%;
+    margin: 2.5%;
+    display: inline-block;
+}
+
+.petPic{
+    border-radius: 25px;
+}
+
+.petInfo{
+    text-align: left;
+    font-size: medium;
+}

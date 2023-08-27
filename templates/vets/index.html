@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1> HERE IS THE VETS PAGE</h1>
-
+{% for vet in vets %}
 <div class="vetProfile">
     <div class="vetPic">
-        <img src="">
+        <img src="/static/images/avatar1.jpg" alt="placeholder avatar image" width="100%">
     </div>
     <div class="vetInfo">
         <ul>
-            <li>Name: <a href="/vets/{{vets.id}}">{{vets.name}}</a></li>
-            <li>Employee Number: <a href="/vets/{{vets.id}}">{{vets.id}}</a></li>
-            <li>Patient List: <a href="/vets/{{vets.id}}"> Click Here </a></li>
+            <li>Name: <a href="/vets">{{vet.name}}</a></li>
+            <li>Employee Number: <a href="/vets">{{vet.id}}</a></li>
+            <li>Patient List: <a href="/vets"> Click Here </a></li>
         </ul>
     </div>
     <div>
@@ -21,6 +20,7 @@
     </div>
 </div>
 
+{% endfor %}
 
 <div class="newVetForm">
     <form action="/newvet" method="POST">

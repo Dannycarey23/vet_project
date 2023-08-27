@@ -1,23 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1> HERE IS THE PETS PAGE</h1>
-
+<p></p>
+{% for pet in pets %}
 <div class="petProfile">
     <div class="petPic">
-        <img src="">
+        <img src="static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
     </div>
     <div class="petInfo">
         <ul>
-            <li>Name: <a href="/pets/{{pets.id}}">{{pets.name}}</a></li>
-            <li>DOB: <a href="/pets/{{pets.id}}">{{pets.dob}}</a></li>
-            <li>Type: <a href="/pets/{{pets.id}}">{{pets.type}}</a></li>
-            <li>Gender: <a href="/pets/{{pets.id}}">{{pets.gender}}</a></li>
-            <li>Owners Name: <a href="/pets/{{pets.id}}">{{pets.owners_name}}</a></li>
-            <li>Owners Phone: <a href="/pets/{{pets.id}}">{{pets.owners_phone}}</a></li>
-            <li>Treatment Notes: <a href="/pets/{{pets.id}}">{{pets.treatment_notes}}</a></li>
-            
-            
+            <li>Name: <a href="/pets/{{pets.id}}">{{ pet.name }}</a></li>
+            <li>DOB: <a href="/pets/{{pets.id}}">{{ pet.dob }}</a></li>
+            <li>Type: <a href="/pets/{{pets.id}}">{{ pet.type }}</a></li>
+            <li>Gender: <a href="/pets/{{pets.id}}">{{ pet.gender }}</a></li>
+            <li>Owners Name: <a href="/pets/{{pets.id}}">{{ pet.owners_name }}</a></li>
+            <li>Owners Phone: <a href="/pets/{{pets.id}}">{{ pet.owners_phone }}</a></li>
+            <li>Treatment Notes: <a href="/pets/{{pets.id}}">{{ pet.treatment_notes }}</a></li>  
         </ul>
     </div>
     <div>
@@ -26,6 +23,6 @@
         </form>
     </div>
 </div>
-
+{% endfor %}
 
 {% endblock %}
