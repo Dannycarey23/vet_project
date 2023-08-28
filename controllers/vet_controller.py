@@ -22,3 +22,8 @@ def new_vet():
 def delete_a_vet(id):
     vet_repository.vet_delete(id)
     return redirect('/vets')
+
+@vets_blueprint.route("/vets/<id>", methods=['GET'])
+def show_vet(id):
+    vet = vet_repository.display_vet(id)
+    return render_template ("vets/show.html", vet=vet)

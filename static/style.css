@@ -52,5 +52,13 @@ nav li{
 }
 
 .addPetForm{
-    
+    width: 50%;
+    margin: auto;
+    border: black solid thick;
+    display: block;
+}
+
+.addPetForm input[type=text] {
+    display: block;
+    width: 50%;
 }

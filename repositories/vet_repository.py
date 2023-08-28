@@ -28,5 +28,15 @@ def vet_delete(id):
     values = [id]
     run_sql(sql, values)
 
+def display_vet(id):
+    vet = None
+    sql = "SELECT * FROM vets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if len(results) > 0:
+        result = results[0]
+        vet = Vet(result['name'], result['id'])
+    return vet
+
 # def vet_update():
 #     return None

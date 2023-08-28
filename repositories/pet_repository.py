@@ -24,3 +24,13 @@ def pet_delete(id):
     sql = "DELETE FROM pets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def display_pet(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if len(results) > 0:
+        result = results[0]
+        pet = Pet(result['name'], result['dob'], result['type'], result['gender'], result['owners_name'], result['owners_phone'], result['treatment_notes'], result['id'])
+    return pet

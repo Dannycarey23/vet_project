@@ -17,4 +17,7 @@ def delete_a_pet(id):
     pet_repository.pet_delete(id)
     return redirect ('/pets')
 
-
+@pets_blueprint.route("/pets/<id>", methods=['GET'])
+def show_pet(id):
+    pet = pet_repository.display_pet(id)
+    return render_template("pets/show.html", pet=pet)
