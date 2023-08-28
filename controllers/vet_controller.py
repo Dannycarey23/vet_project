@@ -26,4 +26,4 @@ def delete_a_vet(id):
 @vets_blueprint.route("/vets/<id>", methods=['GET'])
 def show_vet(id):
     vet = vet_repository.display_vet(id)
-    return render_template ("vets/show.html", vet=vet)
+    return render_template ("vets/show.html", vet=vet, title=vet.name)
