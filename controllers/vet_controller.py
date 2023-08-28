@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, Blueprint
 from models.pet import Pet 
 from models.vet import Vet
 import repositories.vet_repository as vet_repository
-import repositories.pet_repository as pet_repository
+# import repositories.pet_repository as pet_repository
 
 vets_blueprint = Blueprint("vets", __name__)
 
@@ -23,7 +23,18 @@ def delete_a_vet(id):
     vet_repository.vet_delete(id)
     return redirect('/vets')
 
+
 @vets_blueprint.route("/vets/<id>", methods=['GET'])
 def show_vet(id):
     vet = vet_repository.display_vet(id)
     return render_template ("vets/show.html", vet=vet, title=vet.name)
+
+@vets_blueprint.route("/vets/<id>/edit")
+def go_to_edit(id):
+    vet = vet_repository.display_vet(id)
+    return render_template("vets/edit.html", vet=vet)
+
+# @vets_blueprint.route("/updateVet", methods=["POST"])
+# def edit_vet(id):
+#     vet = vet_repository.update_vet(id)
+#     return render_template("vets/index.html", vet=vet, title="A list of all current vets")

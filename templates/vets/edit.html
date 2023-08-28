@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="editForm">
+
+    <h1> Edit info for {{vet.name}} </h1>
+
+    <form action="" method="POST">
+        <label for="name"></label>
+        <input type="text" id="editVetName" name="name" placeholder="Enter name here" required>
+    
+    </form>
+</div>
+
+{% endblock %}

@@ -38,5 +38,7 @@ def display_vet(id):
         vet = Vet(result['name'], result['id'])
     return vet
 
-# def vet_update():
-#     return None
+def update_vet(vet):
+    sql = "UPDATE vet SET (name) = (%s) WHERE id = %s"
+    values = [vet.name, vet.id]
+    run_sql(sql, values) 
