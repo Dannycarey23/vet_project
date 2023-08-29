@@ -8,8 +8,6 @@ nav li{
     display: inline;
 }
 
-
-
 .vetProfile{
     border: solid black thick;
     width: 15%;
@@ -34,16 +32,18 @@ nav li{
 .petProfile{
     border: solid thick black;
     width: 15%;
-    margin: 2.5%;
+    margin: auto;
     display: inline-block;
+
 }
 
 .petPic{
     border-radius: 25px;
+    margin: auto;
 }
 
 .petInfo{
-    text-align: left;
+    text-align: center;
     font-size: medium;
 }
 
@@ -52,13 +52,15 @@ nav li{
 }
 
 .addPetForm{
-    width: 50%;
+    width: 20%;
+    align-content: center;
     margin: auto;
     border: black solid thick;
-    display: block;
+    display: inline-block;
+    text-align: left;
 }
 
 .addPetForm input[type=text] {
     display: block;
-    width: 50%;
+    width: auto;
 }

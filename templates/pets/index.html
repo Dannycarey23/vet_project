@@ -2,27 +2,23 @@
 {% block content %}
 <p></p>
 {% for pet in pets %}
-<div class="petProfile">
-    <div class="petPic">
-        <img src="static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
+<a href="/pets/{{pet.id}}">
+    
+    <div class="petProfile">
+        
+        <div class="petPic">
+            <img src="static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
+        </div>
+    
+        <div class="petInfo">
+            <ul>
+                <li> Name: {{ pet.name }} </li>
+                <li> Type: {{ pet.type }} </li>
+            </ul>
+        </div>
+
     </div>
-    <div class="petInfo">
-        <ul>
-            <li>Name: <a href="/pets/{{pet.id}}">{{ pet.name }}</a></li>
-            <li>DOB: <a href="/pets/{{pet.id}}">{{ pet.dob }}</a></li>
-            <li>Type: <a href="/pets/{{pet.id}}">{{ pet.type }}</a></li>
-            <li>Gender: <a href="/pets/{{pet.id}}">{{ pet.gender }}</a></li>
-            <li>Owners Name: <a href="/pets/{{pet.id}}">{{ pet.owners_name }}</a></li>
-            <li>Owners Phone: <a href="/pets/{{pet.id}}">{{ pet.owners_phone }}</a></li>
-            <li>Treatment Notes: <a href="/pets/{{pet.id}}">{{ pet.treatment_notes }}</a></li>  
-        </ul>
-    </div>
-    <div>
-        <form class="deleteButton" action="/pets/{{pet.id}}/delete" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    </div>
-</div>
+</a>    
 {% endfor %}
 
 <div class="addPetForm">

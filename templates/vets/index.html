@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
 {% for vet in vets %}
-<div class="vetProfile">
-    <div class="vetPic">
-        <img src="/static/images/avatar1.jpg" alt="placeholder avatar image" width="100%">
+<a href="/vets/{{vet.id}}">
+    
+    <div class="vetProfile">
+        
+        <div class="vetPic">
+            <img src="/static/images/avatar1.jpg" alt="placeholder avatar image" width="100%">
+        </div>
+        
+        <div class="vetInfo">
+            <ul>
+                <li>Name: {{vet.name}} </li>
+                <li>Employee Number: {{vet.id}}</li>
+                <li>Length of service: <strong> N/A </strong></li>
+                <li>Specialization: <strong> N/A </strong> </li>
+            </ul>
+        </div>
+    
+    
     </div>
-    <div class="vetInfo">
-        <ul>
-            <li>Name: <a href="/vets/{{vet.id}}">{{vet.name}}</a></li>
-            <li>Employee Number: {{vet.id}}</li>
-            <li>Length of service: <strong> N/A </strong></li>
-            <li>Specialization: <strong> N/A </strong> </li>
-        </ul>
-    </div>
-    <div>
-        <form class="deleteButton" action="/vets/{{vet.id}}/delete" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    </div>
-</div>
+</a>
 
 {% endfor %}
 
