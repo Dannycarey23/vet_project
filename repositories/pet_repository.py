@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+import pdb
 from models.pet import Pet 
 import repositories.vet_repository as vet_repository
 
@@ -43,8 +43,7 @@ def display_pet(id):
     return pet
 
 def update_pet(pet):
-    sql = "UPDATE pets SET (name, dob, type, gender, owners_name, owners_phone, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [pet.name, pet.dob, pet.type, pet.gender, pet.owners_name, pet.owners_phone, pet.treatment_notes, pet.vet.id]
+    sql = "UPDATE pets SET name = %s, dob = %s, type = %s, gender = %s, owners_name = %s, owners_phone = %s, treatment_notes = %s, vet_id = %s WHERE id = %s"
+    values = [pet.name, pet.dob, pet.type, pet.gender, pet.owners_name, pet.owners_phone, pet.treatment_notes, pet.vet.id, pet.id]
     updated_pet = run_sql(sql, values)
-    print(updated_pet)
     return updated_pet

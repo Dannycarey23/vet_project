@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, request, redirect, Blueprint
 from models.vet import Vet 
 from models.pet import Pet 
@@ -42,18 +43,22 @@ def show_pet(id):
     return render_template("pets/show.html", pet=pet, title=pet.name)
 
 
-@pets_blueprint.route("/pets/<id>/edit")
+@pets_blueprint.route("/pets/<id>/edit", methods=['GET'])
 def go_to_edit(id):
     pet = pet_repository.display_pet(id)
-    return render_template("pets/edit.html", pet=pet)
+    vets = vet_repository.vets_view_all()
+    return render_template("pets/edit.html", pet=pet, vets=vets)
 
 @pets_blueprint.route("/pets/<id>", methods=["POST"])
 def edit_pet(id):
     name = request.form['name']
-    # select one vet from the db with the id
-    my_pet = pet_repository.display_pet(id)
-    # change the vets name property = name
-    pet = Pet(name, my_pet.id)
-    pet_repository.update_vet(pet)
-   
-    return redirect("/vets")
+    dob = request.form['dob']
+    type = request.form['type']
+    gender = request.form['gender']
+    owners_name = request.form['owners_name']
+    owners_phone = request.form['owners_phone']
+    treatment_notes = request.form['treatment_notes']
+    vet = vet_repository.display_vet(request.form['vet'])
+    pet = Pet(name, dob, type, gender, owners_name, owners_phone, treatment_notes, vet, id)
+    pet_repository.update_pet(pet)
+    return redirect("/pets")

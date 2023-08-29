@@ -43,7 +43,6 @@ def update_vet(vet):
     sql = "UPDATE vets SET name = %s WHERE id = %s"
     values = [vet.name, vet.id]
     updated_vet = run_sql(sql, values)
-    print(updated_vet)
     return updated_vet
 
 def delete_all():

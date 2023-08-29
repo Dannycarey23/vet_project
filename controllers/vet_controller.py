@@ -37,10 +37,7 @@ def go_to_edit(id):
 @vets_blueprint.route("/vets/<id>", methods=["POST"])
 def edit_vet(id):
     name = request.form['name']
-    # select one vet from the db with the id
     my_vet = vet_repository.display_vet(id)
-    # change the vets name property = name
     vet = Vet(name, my_vet.id)
     vet_repository.update_vet(vet)
-   
     return redirect("/vets")
