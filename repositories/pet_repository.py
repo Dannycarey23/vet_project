@@ -41,3 +41,10 @@ def display_pet(id):
         vet = vet_repository.display_vet(result['vet_id'])
         pet = Pet(result['name'], result['dob'], result['type'], result['gender'], result['owners_name'], result['owners_phone'], result['treatment_notes'], vet, result['id'])
     return pet
+
+def update_pet(pet):
+    sql = "UPDATE pets SET (name, dob, type, gender, owners_name, owners_phone, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [pet.name, pet.dob, pet.type, pet.gender, pet.owners_name, pet.owners_phone, pet.treatment_notes, pet.vet.id]
+    updated_pet = run_sql(sql, values)
+    print(updated_pet)
+    return updated_pet

@@ -40,7 +40,6 @@ def display_vet(id):
     
 
 def update_vet(vet):
-    # pdb.set_trace()
     sql = "UPDATE vets SET name = %s WHERE id = %s"
     values = [vet.name, vet.id]
     updated_vet = run_sql(sql, values)

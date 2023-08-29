@@ -48,6 +48,13 @@
         <label for="treatment_notes">Treatment Notes: </label>
         <input type="text" id="petTreatmentNotes" name="treatment_notes" placeholder="Enter any notes here" required>
 
+        <label for="vet">Vet: </label>
+        <select id="vet" name="vet" required>
+            {% for vet in vets %}
+            <option value="{{vet.id}}">{{vet.name}}</option>
+            {% endfor %}
+        </select>
+
         <button type="submit">Submit</button>
 
     </form>

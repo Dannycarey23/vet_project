@@ -17,12 +17,12 @@
             <li>Vet: <a href="/pets/{{pet.id}}"> {{pet.vet.name}}</a></li>  
         </ul>
     </div>
-    <a href="/pets/{{pet.id}}/edit">Edit</a>
     <div>
         <form class="deleteButton" action="/pets/{{pet.id}}/delete" method="POST">
             <button type="submit">Delete</button>
         </form>
     </div>
 </div>
+
 
 {% endblock %}
