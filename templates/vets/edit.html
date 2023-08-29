@@ -1,14 +1,26 @@
 {% extends 'base.html'%}
 {% block content %}
 
+<div class="vetProfile">
+    <div class="vetPic">
+        <img src="/static/images/avatar1.jpg" alt="placeholder avatar image" width="100%">
+    </div>
+    <div class="vetInfo">
+        <ul>
+            <li>Name: <a href="/vets/{{vet.id}}">{{vet.name}}</a></li>
+            <li>Employee Number: {{vet.id}}</li>
+            <li>Length of service: <strong> N/A </strong></li>
+            <li>Specialization: <strong> N/A </strong> </li>
+        </ul>
+    </div>
+</div>
+
 <div class="editForm">
 
-    <h1> Edit info for {{vet.name}} </h1>
-
-    <form action="" method="POST">
+    <form action="/vets/{{vet.id}}" method="POST">
         <label for="name"></label>
-        <input type="text" id="editVetName" name="name" placeholder="Enter name here" required>
-    
+        <input type="text" id="editVetName" name="name" value="{{vet.name}}"placeholder="{{vet.name}}" required>
+        <button type="submit">Submit</button>
     </form>
 </div>
 

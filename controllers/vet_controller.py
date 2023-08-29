@@ -11,7 +11,7 @@ def index():
     vets = vet_repository.vets_view_all()
     return render_template("vets/index.html", vets=vets, title="A list of all current vets")
 
-@vets_blueprint.route("/newvet", methods=['POST'])
+@vets_blueprint.route("/vets", methods=['POST'])
 def new_vet():
     name = request.form['name']
     vet = Vet(name)
@@ -24,7 +24,7 @@ def delete_a_vet(id):
     return redirect('/vets')
 
 
-@vets_blueprint.route("/vets/<id>", methods=['GET'])
+@vets_blueprint.route("/vets/<id>")
 def show_vet(id):
     vet = vet_repository.display_vet(id)
     return render_template ("vets/show.html", vet=vet, title=vet.name)
@@ -34,7 +34,13 @@ def go_to_edit(id):
     vet = vet_repository.display_vet(id)
     return render_template("vets/edit.html", vet=vet)
 
-# @vets_blueprint.route("/updateVet", methods=["POST"])
-# def edit_vet(id):
-#     vet = vet_repository.update_vet(id)
-#     return render_template("vets/index.html", vet=vet, title="A list of all current vets")
+@vets_blueprint.route("/vets/<id>", methods=["POST"])
+def edit_vet(id):
+    name = request.form['name']
+    # select one vet from the db with the id
+    my_vet = vet_repository.display_vet(id)
+    # change the vets name property = name
+    vet = Vet(name, my_vet.id)
+    vet_repository.update_vet(vet)
+   
+    return redirect("/vets")

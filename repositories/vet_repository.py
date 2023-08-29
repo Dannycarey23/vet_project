@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+import pdb
 from models.pet import Pet 
 from models.vet import Vet 
 
@@ -37,8 +37,16 @@ def display_vet(id):
         result = results[0]
         vet = Vet(result['name'], result['id'])
     return vet
+    
 
 def update_vet(vet):
-    sql = "UPDATE vet SET (name) = (%s) WHERE id = %s"
+    # pdb.set_trace()
+    sql = "UPDATE vets SET name = %s WHERE id = %s"
     values = [vet.name, vet.id]
-    run_sql(sql, values) 
+    updated_vet = run_sql(sql, values)
+    print(updated_vet)
+    return updated_vet
+
+def delete_all():
+    sql = "DELETE FROM vets"
+    run_sql(sql)
