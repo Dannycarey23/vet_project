@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="petProfile">
-    <div class="petPic">
+<div class="profile">
+    <div class="pic">
         <img src="/static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
     </div>
-    <div class="petInfo">
+    <div class="info">
         <ul>
             <li>Name: <a href="/pets/{{pet.id}}">{{ pet.name }}</a></li>
             <li>DOB: <a href="/pets/{{pet.id}}">{{ pet.dob }}</a></li>

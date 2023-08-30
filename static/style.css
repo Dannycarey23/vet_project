@@ -1,6 +1,30 @@
 body{
     margin: auto;
     font-family:'Times New Roman', Times, serif;
+    background-color: seagreen;
+    background-blend-mode: overlay;
+    text-align: center;
+}
+h1{
+    font-size: xx-large;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: none;
+    border-bottom: solid 2px violet;
+}
+
+
+nav {
+    background-color: seagreen;
+    border-bottom: thick violet solid;
 }
 
 nav li{
@@ -8,54 +32,71 @@ nav li{
     display: inline;
 }
 
-.vetProfile{
-    border: solid black thick;
+#rabbitLogo{
+    height: 2em;
+    width: 2em;
+}
+
+#rabbitLogoReverse{
+    height: 2em;
+    width: 2em;
+    transform: scaleX(-1);
+}
+
+.mainText{
+    padding-left: 20%;
+    padding-right: 20%;
+    margin:auto;
+    text-align: left;
+    color: white;
+}
+
+section{
+    background-image: url("/static/images/background6.png");
+    background-position:center;
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: thick violet solid;
+}
+
+.profile{
+    border: solid violet thick;
     width: 15%;
     margin: 2.5%;
     display: inline-block;
+    background-color: white;
+    color: black;
 }
 
-.vetPic{
+.pic{
     border-radius: 25px;
     object-fit: contain;
 }
 
-.vetInfo{
+.info{
     text-align: left;
     font-size: medium;
 }
 
-/* .newVetForm{
-
-}  */
-
-.petProfile{
-    border: solid thick black;
-    width: 15%;
-    margin: auto;
-    display: inline-block;
-
-}
-
-.petPic{
-    border-radius: 25px;
-    margin: auto;
-}
-
-.petInfo{
-    text-align: center;
-    font-size: medium;
-}
-
-.petInfo li{
+.info li{
     list-style-type: none;
+}
+
+.info a{
+    color: black;
+}
+
+form{
+    display: block;
 }
 
 .addPetForm{
     width: 20%;
     align-content: center;
     margin: auto;
-    border: black solid thick;
+    border: violet solid thick;
     display: inline-block;
     text-align: left;
 }
@@ -63,4 +104,19 @@ nav li{
 .addPetForm input[type=text] {
     display: block;
     width: auto;
+}
+
+footer{
+    border-top: violet solid thick;
+}
+
+.socialMedia{
+    width: 3em;
+    height: 3em;
+    padding-top: 2em;
+    padding-right: 5em;
+}
+
+hr{
+    background-color: violet;
 }

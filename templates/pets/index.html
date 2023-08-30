@@ -4,13 +4,13 @@
 {% for pet in pets %}
 <a href="/pets/{{pet.id}}">
     
-    <div class="petProfile">
+    <div class="profile">
         
-        <div class="petPic">
+        <div class="pic">
             <img src="static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
         </div>
     
-        <div class="petInfo">
+        <div class="info">
             <ul>
                 <li> Name: {{ pet.name }} </li>
                 <li> Type: {{ pet.type }} </li>

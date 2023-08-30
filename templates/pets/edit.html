@@ -1,22 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="petProfile">
-    <div class="petPic">
+<div class="profile">
+    
+    <div class="pic">
         <img src="/static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
     </div>
-    <!-- <div class="petInfo">
-        <ul>
-            <li>Name: <a href="/pets/{{pet.id}}">{{ pet.name }}</a></li>
-            <li>DOB: <a href="/pets/{{pet.id}}">{{ pet.dob }}</a></li>
-            <li>Type: <a href="/pets/{{pet.id}}">{{ pet.type }}</a></li>
-            <li>Gender: <a href="/pets/{{pet.id}}">{{ pet.gender }}</a></li>
-            <li>Owners Name: <a href="/pets/{{pet.id}}">{{ pet.owners_name }}</a></li>
-            <li>Owners Phone: <a href="/pets/{{pet.id}}">{{ pet.owners_phone }}</a></li>
-            <li>Treatment Notes: <a href="/pets/{{pet.id}}">{{ pet.treatment_notes }}</a></li>
-            <li>Vet: <a href="/pets/{{pet.id}}"> {{pet.vet.name}}</a></li>  
-        </ul>
-    </div> -->
+
     <div class="editForm">
         <form action="/pets/{{pet.id}}" method="POST">
             <label for="name">Name: </label>
