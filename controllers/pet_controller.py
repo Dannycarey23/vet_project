@@ -1,5 +1,6 @@
 import pdb
-from flask import Flask, render_template, request, redirect, Blueprint
+from flask import Flask, render_template, request, redirect, Blueprint 
+import os.path 
 from models.vet import Vet 
 from models.pet import Pet 
 
@@ -12,6 +13,7 @@ pets_blueprint = Blueprint("pets", __name__)
 def index():
     pets = pet_repository.pets_view_all()
     vets = vet_repository.vets_view_all()
+    # check_file = os.path.isfile("static/images/{{pet.name}}.jpg")
     return render_template("pets/index.html", pets=pets, vets=vets, title="All pets currently registered at the surgery")
 
 @pets_blueprint.route("/newpet", methods=['POST'])

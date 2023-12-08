@@ -3,7 +3,7 @@
 
 <div class="profile">
     <div class="pic">
-        <img src="/static/images/avatar1.jpg" width="100%" alt="placeholder avatar">
+        <img src="/static/images/{{pet.name}}.jpg" width="100%" alt="picture of the animal">
     </div>
     <div class="info">
         <ul>
@@ -17,7 +17,7 @@
             <li>Vet: <a href="/pets/{{pet.id}}"> {{pet.vet.name}}</a></li>  
         </ul>
     </div>
-    <a href="/pets/{{pet.id}}/edit">Edit</a>
+   <button><a href="/pets/{{pet.id}}/edit">Edit</a></button>
     <div>
         <form class="deleteButton" action="/pets/{{pet.id}}/delete" method="POST">
             <button type="submit">Delete</button>

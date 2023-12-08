@@ -5,6 +5,7 @@ body{
     background-blend-mode: overlay;
     text-align: center;
 }
+
 h1{
     font-size: xx-large;
     color: white;                           
@@ -15,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.anchor:hover {
     color: orange;
     text-decoration: none;
     border-bottom: solid 2px violet;
@@ -30,6 +31,10 @@ nav {
 nav li{
     list-style-type: none;
     display: inline;
+}
+
+nav ul li a{
+    margin: 6em;
 }
 
 #rabbitLogo{
@@ -52,10 +57,13 @@ nav li{
 }
 
 section{
+    display: inline-flex;
     background-image: url("/static/images/background6.png");
-    background-position:center;
+    background-position: center;
     height: 400px;
     width: 100%;
+    margin: 0;
+    padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom: thick violet solid;
@@ -75,6 +83,15 @@ section{
     object-fit: contain;
 }
 
+img{
+    height: 20em;
+    
+}
+
+button a{
+    color: black;
+}
+
 .info{
     text-align: left;
     font-size: medium;
@@ -88,9 +105,9 @@ section{
     color: black;
 }
 
-form{
+/* form{
     display: block;
-}
+} */
 
 .addPetForm{
     width: 20%;
@@ -110,6 +127,25 @@ form{
 }
 
 .addPetForm button{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.editForm{
+    width: 75%;
+    display: block;
+    text-align: left;
+    margin-bottom: 2em;
+    color: orange;
+    padding: 0 2em 0 2em;
+}
+
+.editForm input[type=text] {
+    display: block;
+    width: 100%;
+}
+
+.editForm button{
     margin-left: 40%;
     margin-right: 40%;
 }
