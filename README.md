@@ -38,7 +38,7 @@ A veterinary practice has approached you to build a web application to help them
 
 # Screenshots
 
-![homepage](static/images/homepage.png)
+![homepage](static/images/homePage.png)
 ![all pets](static/images/allPets.png)
 ![solo pet](static/images/uniquePet.png)
 ![all vets](static/images/allvets.png)
