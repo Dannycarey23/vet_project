@@ -4,7 +4,7 @@
 
 <div class="profile">
     <div class="pic">
-        <img src="/static/images/avatar1.jpg" alt="placeholder avatar image" width="100%">
+        <img src="/static/images/{{vet.name}}.jpg" alt="picture of the vet" width="100%">
     </div>
     <div class="info">
         <ul>
@@ -15,7 +15,7 @@
         </ul>
     </div>
     <div>
-        <a href="/vets/{{vet.id}}/edit">Edit</a>
+        <button><a href="/vets/{{vet.id}}/edit">Edit</a></button>
         
         <form class="deleteButton" action="/vets/{{vet.id}}/delete" method="POST">
             <button type="submit">Delete</button>
