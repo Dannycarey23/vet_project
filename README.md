@@ -36,6 +36,14 @@ A veterinary practice has approached you to build a web application to help them
 - Run the console file; In the terminal type "python3 console.py"
 - Initiate flask; In the console type "flask run"
 
+# Screenshots
+
+![homepage](static/images/homepage.png)
+![all pets](static/images/allPets.png)
+![solo pet](static/images/uniquePet.png)
+![all vets](static/images/allvets.png)
+![solo vet](static/images/uniqueVet.png)
+
 
 ### Attributions
 - "Radagast" image from: <a href="https://www.freepik.com/free-ai-image/portrait-wizard-medieval-times_81397576.htm#query=crazy%20wizard&position=13&from_view=search&track=ais&uuid=4a5e486d-affd-4808-abe1-3fb74b4aead3">Image By freepik</a>
